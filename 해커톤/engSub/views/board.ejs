@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : WellFormed 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130731
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+	<link href="/stylesheets/default.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/stylesheets/fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+	<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+	<style>
+    div#banner {
+    	margin: 0px auto;
+    	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+        width: 1200px;
+        height: 1000px;
+    }
+    div#logo{
+    	/*background-color:black;*/
+    }
+    div.left {
+        width: 60%;
+        float: left;
+        box-sizing: border-box;
+    }
+    div.right {
+        width: 40%;
+        float: right;
+        box-sizing: border-box;
+    }
+    td#realmoon{
+    	font-size: 20px;
+    	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+    }
+    </style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<input id="hamburger" type="checkbox" /><label for="hamburger">&equiv;</label>
+		<nav>
+			<header>메뉴</header>
+			<ul>
+				<li><a href="#">공개키암호론</a></li>
+				<li><a href="#">웹해킹과 보안</a></li>
+				<li><a href="#">알고리즘</a></li>
+			</ul>
+		</nav>
+		
+		
+		<div id="logo" class="container">
+			<img src="images/main_logo.jpg" width="55" height="55" alt="" align="left" hspace="5" />
+			<h1><a href="#">세종<span>대학교</span></a></h1>
+			<!--	<p>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></p> -->
+			<p style="color:white">2019 Sejong AI Hackathon <tn style="color:yellow">Team : 전설의복학생 </tn></p>
+			<a style="color:white"> 사용자 : <%= user_id %> 님 </a>
+		</div>
+		
+		<div id="menu" class="container">
+			<ul>
+				<li class="current_page_item"><a href="#" accesskey="1" title="">1 - 1</a></li>
+				<li><a href="#">1 - 2</a></li>
+				<li><a href="#">2 - 1</a></li>
+				<li><a href="#">2 - 2</a></li>
+				<li><a href="#">3 - 1</a></li>
+				<li><a href="#">4 - 1</a></li>
+				<li><a href="#">4 - 2</a></li>
+				<li><a href="#">5 - 1</a></li>
+				<li><a href="#">5 - 2</a></li>
+				<li><a href="#">6 - 1</a></li>
+				<li><a href="#">6 - 2</a></li>
+				<li><a href="#">7 - 1</a></li>
+				<li><a href="#">7 - 2</a></li>
+				<li><a href="#">8 - 1</a></li>
+				<li><a href="#">8 - 2</a></li>
+				<li><a href="#">9 - 1</a></li>
+			</ul>
+		</div>
+		<div id="banner" class="container">
+			<div class="left">
+			<embed src="/images/pdf/cipher.pdf" type="application/pdf" width="100%" height="900px" />
+			<input type="hidden" id="board_id" name="board_id" value="${boardView.id}" />
+		</div>
+			<!--요기야 승훈아 문서 편집-->
+
+        <div class="right" width="100%" height="900px">
+            </br>
+            </br>
+            <table border="1" width="100%" >
+                <tr id= "edit">
+                    <td colspan="2" align="right">
+                        <button id="modify" name="modify">글 수정</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="300px" style="color:white" font>
+                        1-1 강의 대본
+                    </td>
+                    <td style="color:white">
+                        최근 수정자: 리진하
+                    </td>
+                </tr>
+                <tr height="600px">
+                    <td colspan="2" valign="top" id="realmoon" style="color:white">
+                        본문 내용
+                    </td>
+                </tr>
+            </table>
+            <table border="1" width="100%" id="reply_area">
+                <tr reply_type="all"><!-- 뒤에 댓글 붙이기 쉽게 선언 -->
+                    <td colspan="4"></td>
+                </tr>
+                <!-- 댓글이 들어갈 공간 -->
+            </table>
+            <table border="1" width="100%" bordercolor="gray">
+                <tr>
+                    <td width="90px">
+                        이름: <input type="text" id="reply_writer" name="reply_writer" style="width:170px;" maxlength="10" placeholder="작성자"/>
+                        패스워드: <input type="password" id="reply_password" name="reply_password" style="width:170px;" maxlength="10" placeholder="패스워드"/>
+                        <button id="reply_save" name="reply_save">댓글 등록</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea id="reply_content" name="reply_content" rows="4" cols="50" placeholder="댓글을 입력하세요."></textarea>
+                    </td>
+                </tr>
+            </table>
+            <!--
+            <table width="100px">
+                <tr>
+                    <td align="right">
+                        <button id="list" name="list">크게 보기</button>
+                    </td>
+                </tr>
+            </table>
+        -->
+        </div>
+        <!--요기 까지 문서 편집 -->
+			<div id="out">
+				<div id="in">
+					<button class="button" id="recordButton">PDF</button>
+					<button class="button" id="pauseButton" disabled>Doucment</button>
+					<button class="button" id="stopButton" disabled>Audio</button>
+				</div>
+				<div id="formats">Format: start recording to see sample rate</div>
+				<h4>Recordings</h4>
+				<ol id="recordingsList"></ol>
+			</div>
+
+		</div>
+		<div id="copyright" class="container">
+				<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a
+						href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+			</div>
+	</div>
+
+	
+	<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+	<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+	<script src="/javascripts/app.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$.ajax({
+				url : '/board/fileread',
+				type : 'get',
+				dataType : 'text',
+				success : function(result){
+					
+					if(result){
+						$('td#realmoon').text(result)
+					}
+					else {
+						alert('로그인에 실패하였습니다')
+					}
+				}
+			})
+
+		$('#modify').click(function() {
+			var txt = $('td#realmoon').text();
+			var edit= '<tr id= edit>' +
+			 '<td#realmoon>'+'<textarea name= modify_realmoon>' +
+			txt +'</textarea>' + 
+			'</td>'+ '<td align="center">'+
+            '<button name="modify_save" 등록 </button>'+
+            '<button name="modify_cancel" 취소</button>'+
+            '</td>'
+			'</tr>'
+			/*$.ajax({
+				url : '/board/filewrite',
+				type : 'post',
+				dataType : 'json',
+				data : {'content': txt} ,
+				success : function(result){
+					
+					if(result){
+						$('td#realmoon').text(result);
+						location.reload();
+					}
+					else {
+						alert('로그인에 실패하였습니다')
+					}
+				}
+			})*/
+		})
+	})
+	</script>
+	<script type="text/javascript">
+		$(document)
+	</script>
+	
+</body>
+
+</html>

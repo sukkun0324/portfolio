@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : WellFormed 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130731
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+	<link href="/stylesheets/default.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/stylesheets/fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+	<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<input id="hamburger" type="checkbox" /><label for="hamburger">&equiv;</label>
+		<nav>
+			<header>메뉴</header>
+			<ul>
+				<li><a href="#">공개키암호론</a></li>
+				<li><a href="#">웹해킹과 보안</a></li>
+				<li><a href="#">알고리즘</a></li>
+			</ul>
+		</nav>
+		
+		
+		<div id="logo" class="container">
+			<img src="images/main_logo.jpg" width="55" height="55" alt="" align="left" hspace="5" />
+			<h1><a href="#">세종<span>대학교</span></a></h1>
+			<!--	<p>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></p> -->
+			<p>2019 Sejong AI Hackaton <a>Team : <%= user_id %></a></p>
+		</div>
+		
+		<div id="menu" class="container">
+			<ul>
+				<li class="current_page_item"><a href="#" accesskey="1" title="">1 - 1</a></li>
+				<li><a href="#">1 - 2</a></li>
+				<li><a href="#">2 - 1</a></li>
+				<li><a href="#">2 - 2</a></li>
+				<li><a href="#">3 - 1</a></li>
+				<li><a href="#">4 - 1</a></li>
+				<li><a href="#">4 - 2</a></li>
+				<li><a href="#">5 - 1</a></li>
+				<li><a href="#">5 - 2</a></li>
+				<li><a href="#">6 - 1</a></li>
+				<li><a href="#">6 - 2</a></li>
+				<li><a href="#">7 - 1</a></li>
+				<li><a href="#">7 - 2</a></li>
+				<li><a href="#">8 - 1</a></li>
+				<li><a href="#">8 - 2</a></li>
+				<li><a href="#">9 - 1</a></li>
+			</ul>
+		</div>
+		<div id="banner" class="container">
+			<embed src="/images/pdf/cipher.pdf" type="application/pdf" width="100%" height="700px" />
+			<div id="out">
+				<div id="in">
+					<button class="button" id="Textbutton">Audio_Text</button>
+				</div>
+				<div id="formats">Format: start recording to see sample rate</div>
+				<h4>Recordings</h4>
+				<ol id="recordingsList"></ol>
+			</div>
+
+		</div>
+		<div id="copyright" class="container">
+				<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a
+						href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+			</div>
+	</div>
+
+	
+	<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+	<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+	<script src="/javascripts/app.js"></script>
+	<script>
+$( document ).ready(function() {
+	$("#menu").on("mousewheel", function(event, delta){
+		event.preventDefault();
+		this.scrollLeft -= (delta * 30);
+		console.log(this.scrollLeft);
+		console.log(delta);
+
+		if (this.scrollLeft > 400) {
+			this.scrollLeft = 0;
+		}
+});
+
+	$('.content').mousewheel(function(event, delta) {
+		event.preventDefault();
+		this.scrollLeft -= (delta * 30);
+		return false;
+	});
+});
+	</script>
+</body>
+
+</html>

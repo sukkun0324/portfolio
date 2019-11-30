@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script>
+      function saveText() {
+        var txtsrc = document.all["ta"].value;
+        var fso = new ActiveXObject("Scripting.FileSystemObject");
+        fso.CreateTextFile("/Users/sukkun/Desktop/hackerthon/engSub/views/test.txt",true);
+        var newFileObject = fso.GetFile("/Users/sukkun/Desktop/hackerthon/engSub/views/test.txt");
+        var text = newFileObject.OpenAsTextStream(2,0);
+        text.Write(txtsrc);
+        text.Close();
+      }
+    </script>
+  </head>
+  <body>
+    <textarea name=ta cols=50 rows=10></textarea>
+    <br><input type=button value=save onclick="saveText();">
+  </body>
+</html>

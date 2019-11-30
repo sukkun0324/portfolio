@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : WellFormed 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130731
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="/stylesheets/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/stylesheets/fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="logo" class="container">
+	<img src="/images/main_logo.jpg" width="55" height="55" alt="" align="left" hspace="5"/>
+	<h1><a href="#">세종<span>대학교</span></a></h1>
+<!--	<p>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></p> -->
+		<p>2019 Sejong AI Hackaton <a>Team : ???</a></p>
+</div>
+
+
+<div id="login" class="container">
+	<div class="login-page">
+			<div class="form">
+			  <form class="login-form" method="post">
+				<p class="title"><strong>Member Login</strong></p>
+				<input type="text" name="user_id" id="user_id" placeholder="username"/>
+				<input type="password" name="user_pwd" id="user_pwd" placeholder="password"/>
+				<button type="submit" onclick="login_pro()">login</button>
+				<p class="message">Not registered? <a href="#">Create an account</a></p>
+			  </form>
+			</div>
+		  </div>
+	</div>
+</div>
+
+<div id="copyright" class="container">
+	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+</body>
+<script>
+	// $(document).ready(function() {
+	// 	location.href = '/board';
+	// })
+	// 로그인 처리 함수
+	function login_pro(){
+			// 입력한 값을 가져온다.
+			user_id = $("#user_id").val()
+			user_pwd = $("#user_pwd").val()
+			// ajax
+			param = {
+				user_id : user_id,
+				user_pwd : user_pwd
+			}
+			
+			$.ajax({
+				url : '/users/login',
+				type : 'post',
+				dataType : 'text',
+				data : param,
+				success : function(result){
+					
+					if(result){
+						location.href = '/board'
+						// alert('반갑습니다! :D')
+						// alert(result);
+					}
+					else {
+						alert('로그인에 실패하였습니다')
+						$("#user_id").val('')
+						$("#user_pw").val('')
+						$("#user_id").focus()
+						// location.href='login'
+					}
+				}
+			})
+		}
+		
+	</script>
+</html>
